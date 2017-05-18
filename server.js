@@ -22,13 +22,13 @@ app.use((req,res,next)=>{
   next();
 });
 
-app.use((req,res,next)=>{
-  res.render('maintenance.hbs',{
-    pageTitle: 'Maintenance Page',
-    // currentYear: new Date().getFullYear(),
-    welcomeMessage: 'Oops somethig went wrong'
-  });
-});
+// app.use((req,res,next)=>{
+//   res.render('maintenance.hbs',{
+//     pageTitle: 'Maintenance Page',
+//     // currentYear: new Date().getFullYear(),
+//     welcomeMessage: 'Oops somethig went wrong'
+//   });
+// });
 
 hbs.registerHelper('getCurrentYear', ()=>{
   return new Date().getFullYear();
@@ -50,6 +50,13 @@ app.get('/about', (req, res)=>{
   res.render('about.hbs',{
     pageTitle: 'About Page'
     // currentYear: new Date().getFullYear()
+  });
+});
+
+app.get('/projects',(req,res)=>{
+  res.render('projects.hbs',{
+    pageTitle: 'Portfolio Page',
+    welcomeMessage: 'List of portfolios to be shown here'
   });
 });
 
